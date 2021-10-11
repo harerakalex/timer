@@ -3,10 +3,11 @@ import logging
 
 class CustomLogger:
     default_level = logging.DEBUG
-    loggers = {}
 
     def __init__(self, name: str):
         self.name = name
+        self.logger = logging.getLogger(self.name)
+        self.logger.setLevel(self.default_level)
 
     def __str__(self):
         return "Logging in: {}".format(self.name)
@@ -35,21 +36,16 @@ class CustomLogger:
             datefmt="%m-%d-%Y %I:%M:%S %p",
         )
 
-    def log(self, level: str = "warning", msg: str = "", file_log: bool = False):
-        if self.loggers.get(self.name):
-            logger = self.loggers.get(self.name)
-        else:
-            logger = logging.getLogger(self.name)
-            logger.setLevel(self.default_level)
+    def log(self, level: str = default_level, msg: str = "", file_log: bool = False):
+        fh = self.create_file_handler()
 
-            ch = self.create_console_handler()
+        if file_log:
+            self.logger.addHandler(fh)
 
-            logger.addHandler(ch)
+        ch = self.create_console_handler()
+        self.logger.addHandler(ch)
 
-            if file_log:
-                fh = self.create_file_handler()
-                logger.addHandler(fh)
+        getattr(self.logger, level)(msg)
 
-            self.loggers[self.name] = logger
-
-        return getattr(logger, level)(msg)
+        self.logger.removeHandler(ch)
+        self.logger.removeHandler(fh)
