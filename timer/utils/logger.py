@@ -3,6 +3,7 @@ import logging
 
 class CustomLogger:
     default_level = logging.DEBUG
+    loggers = {}
 
     def __init__(self, name: str):
         self.name = name
@@ -35,15 +36,20 @@ class CustomLogger:
         )
 
     def log(self, level: str = "warning", msg: str = "", file_log: bool = False):
-        logger = logging.getLogger(self.name)
-        logger.setLevel(self.default_level)
+        if self.loggers.get(self.name):
+            logger = self.loggers.get(self.name)
+        else:
+            logger = logging.getLogger(self.name)
+            logger.setLevel(self.default_level)
 
-        ch = self.create_console_handler()
+            ch = self.create_console_handler()
 
-        logger.addHandler(ch)
+            logger.addHandler(ch)
 
-        if file_log:
-            fh = self.create_file_handler()
-            logger.addHandler(fh)
+            if file_log:
+                fh = self.create_file_handler()
+                logger.addHandler(fh)
+
+            self.loggers[self.name] = logger
 
         return getattr(logger, level)(msg)
