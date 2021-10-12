@@ -1,4 +1,5 @@
 import logging
+from typing import Optional
 
 
 class CustomLogger:
@@ -36,7 +37,12 @@ class CustomLogger:
             datefmt="%m-%d-%Y %I:%M:%S %p",
         )
 
-    def log(self, level: str = default_level, msg: str = "", file_log: bool = False):
+    def log(
+        self,
+        msg: str,
+        level: Optional[str] = default_level,
+        file_log: Optional[bool] = False,
+    ) -> None:
         fh = self.create_file_handler()
 
         if file_log:

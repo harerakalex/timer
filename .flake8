@@ -1,5 +1,5 @@
 [flake8]
 jobs = auto
 ignore = E221,E241,W503
-max-line-length = 120
+max-line-length = 88
 exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
