@@ -5,6 +5,7 @@ from functools import wraps
 from typing import Any, Callable, Optional
 
 from timer.utils.logger import CustomLogger
+from timer.utils.helpers import format_time
 
 logger = CustomLogger(__name__)
 
@@ -29,7 +30,9 @@ def timer(
 
             logger.log(
                 level=level,
-                msg="{} function ran in {:.2f} sec".format(func.__name__, used_time),
+                msg="{} function ran in {}".format(
+                    func.__name__, format_time(used_time)
+                ),
                 file_log=file_log,
             )
 
