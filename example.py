@@ -33,8 +33,21 @@ def search(arr, x) -> str:
     return "Not found"
 
 
+@timer(exp_time=0.01, file_log=True)
+def sample_func():
+    """ This function allocates lists a, b and then deletes b. """
+
+    a = [1] * (10 ** 6)
+    b = [2] * (2 * 10 ** 7)
+    del b
+
+    return a
+
+
 arr = range(1000000000000)
 
-add(12, 3)
-binary_search(arr, 100000000)
-search(arr, 100000000)
+if __name__ == '__main__':
+    add(12, 3)
+    binary_search(arr, 100000000)
+    search(arr, 100000000)
+    sample_func()
