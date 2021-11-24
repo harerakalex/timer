@@ -1,7 +1,8 @@
 from unittest import TestCase
+
 from timer import timer
-from timer.utils import format_time
 from timer.logger import CustomLogger
+from timer.utils import format_time
 from timer.version import __version__
 
 version = "0.1.0"
@@ -17,6 +18,7 @@ class TestTimer(TestCase):
         @timer(file_log=True, exp_time=0)
         def func(x):
             return x
+
         self.decorated = func
 
     def test_timer(self):

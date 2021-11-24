@@ -5,6 +5,6 @@ def format_time(secs: float) -> str:
     seconds = secs
 
     if minutes > 0:
-        return f'{minutes} min and {seconds} secs'
+        return f"{minutes} min and {seconds} secs"
 
-    return f'{seconds:.2f} secs'
+    return f"{seconds:.2f} secs"

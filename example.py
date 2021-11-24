@@ -35,7 +35,7 @@ def search(arr, x) -> str:
 
 @timer(exp_time=0.01, file_log=True)
 def sample_func() -> list:
-    """ This function allocates lists a, b and then deletes b. """
+    """This function allocates lists a, b and then deletes b."""
 
     a = [1] * (10 ** 6)
     b = [2] * (2 * 10 ** 7)
@@ -46,7 +46,7 @@ def sample_func() -> list:
 
 arr = range(1000000000000)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     add(12, 3)
     binary_search(arr, 100000000)
     search(arr, 100000000)
