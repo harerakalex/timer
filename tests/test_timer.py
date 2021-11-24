@@ -1,12 +1,15 @@
 from unittest import TestCase
-from timer import __version__, timer
+from timer import timer
 from timer.utils.helpers import format_time
 from timer.utils.logger import CustomLogger
+from timer.version import __version__
+
+version = "0.1.0"
 
 
 class TestTimerVersion(TestCase):
     def test_version(self):
-        self.assertEqual(__version__, "0.1.0")
+        self.assertEqual(__version__, version)
 
 
 class TestTimer(TestCase):
