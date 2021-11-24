@@ -1,7 +1,7 @@
 from unittest import TestCase
 from timer import timer
-from timer.utils.helpers import format_time
-from timer.utils.logger import CustomLogger
+from timer.utils import format_time
+from timer.logger import CustomLogger
 from timer.version import __version__
 
 version = "0.1.0"
@@ -30,9 +30,9 @@ class TestTimeHelper(TestCase):
         self.assertEqual(res, "2 min and 0 secs")
 
     def test_seconds(self):
-        res = format(1)
+        res = format_time(1)
 
-        self.assertEqual(res, "1")
+        self.assertEqual(res, "1.00 secs")
 
 
 class TestLogger(TestCase):

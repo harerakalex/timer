@@ -2,7 +2,7 @@ from timer import timer
 
 
 @timer(file_log=True)
-def add(a, b):
+def add(a, b) -> int:
     return a + b
 
 
@@ -34,7 +34,7 @@ def search(arr, x) -> str:
 
 
 @timer(exp_time=0.01, file_log=True)
-def sample_func():
+def sample_func() -> list:
     """ This function allocates lists a, b and then deletes b. """
 
     a = [1] * (10 ** 6)

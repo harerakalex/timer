@@ -1,5 +1,4 @@
 import logging
-from typing import Optional
 
 
 class CustomLogger:
@@ -40,8 +39,8 @@ class CustomLogger:
     def log(
         self,
         msg: str,
-        level: Optional[str] = default_level,
-        file_log: Optional[bool] = False,
+        level: int = default_level,
+        file_log: bool = False,
     ) -> None:
         fh = self.create_file_handler()
 
@@ -51,7 +50,7 @@ class CustomLogger:
         ch = self.create_console_handler()
         self.logger.addHandler(ch)
 
-        getattr(self.logger, level)(msg)
+        getattr(self.logger, str(level))(msg)
 
         self.logger.removeHandler(ch)
         self.logger.removeHandler(fh)

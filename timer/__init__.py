@@ -1,9 +1,9 @@
 import time
 from functools import wraps
-from typing import Any, Callable, Optional
+from typing import Callable, Optional
 
-from timer.utils.logger import CustomLogger
-from timer.utils.helpers import format_time
+from timer.logger import CustomLogger
+from timer.utils import format_time
 
 logger = CustomLogger(__name__)
 
@@ -11,9 +11,9 @@ level = "info"
 
 
 def timer(
-    file_log: Optional[bool] = False, exp_time: Optional[float] = None
-) -> Callable[[Any], None]:
-    def decorator(func) -> Callable[[Any], None]:
+    file_log: bool = False, exp_time: Optional[float] = None
+) -> Callable[[Callable], Callable]:
+    def decorator(func) -> Callable:
         @wraps(func)
         def wrapper(*args, **kwargs):
             start_time = time.time()
