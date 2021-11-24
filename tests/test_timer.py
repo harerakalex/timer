@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from timer import timer
-from timer.logger import CustomLogger
-from timer.utils import format_time
-from timer.version import __version__
+from time_profiler import timer
+from time_profiler.logger import CustomLogger
+from time_profiler.utils import format_time
+from time_profiler.version import __version__
 
 version = "0.1.0"
 

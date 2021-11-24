@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "timer"
+name = "time_profiler"
 version = "0.1.0"
 description = "This project provides a method for determining how long it takes a function to complete its execution."
 authors = ["harerakalex <hareraloston@gmail.com>"]

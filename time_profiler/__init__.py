@@ -2,8 +2,8 @@ import time
 from functools import wraps
 from typing import Callable, Optional
 
-from timer.logger import CustomLogger
-from timer.utils import format_time
+from time_profiler.logger import CustomLogger
+from time_profiler.utils import format_time
 
 logger = CustomLogger(__name__)
 
