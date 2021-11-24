@@ -4,7 +4,7 @@ from timer.utils.helpers import format_time
 from timer.utils.logger import CustomLogger
 from timer.version import __version__
 
-version = "0.1.0"
+version = "0.1.1"
 
 
 class TestTimerVersion(TestCase):
