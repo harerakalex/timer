@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "This project provides a method for determining how long it takes a function to complete its execution."
 authors = ["harerakalex <hareraloston@gmail.com>"]
 license = "MIT License"
+readme = "README.md"
+repository = "https://github.com/harerakalex/timer"
 
 [tool.poetry.dependencies]
 python = "^3.8"
