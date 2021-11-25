@@ -1,4 +1,4 @@
-# Timer
+# time_profiler
 
 This is a Python module for profiling a function's time usage. It's quite useful for determining how long a function will take to execute.
 
@@ -7,7 +7,7 @@ This is a Python module for profiling a function's time usage. It's quite useful
 Install via pip:
 
 ```
-pip install timer
+pip install time_profiler
 ```
 
 # Usage
@@ -17,7 +17,7 @@ First decorate the function you would like to profile with **@timer()** and then
 In the following example, we create a simple function called **sample_func** that allocates lists a, b and then deletes b:
 
 ```
-from timer import timer
+from time_profiler import timer
 
 @timer()
 def sample_func():

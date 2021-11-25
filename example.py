@@ -1,4 +1,4 @@
-from timer import timer
+from time_profiler import timer
 
 
 @timer(file_log=True)
