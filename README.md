@@ -7,7 +7,7 @@ This is a Python module for profiling a function's time usage. It's quite useful
 Install via pip:
 
 ```
-pip install timer
+pip install time_profiler
 ```
 
 # Usage
