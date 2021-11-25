@@ -5,7 +5,7 @@ from time_profiler.logger import CustomLogger
 from time_profiler.utils import format_time
 from time_profiler.version import __version__
 
-version = "0.0.1"
+version = "0.0.2"
 
 
 class TestTimerVersion(TestCase):
